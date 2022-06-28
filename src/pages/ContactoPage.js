@@ -35,10 +35,7 @@ const ContactoPage = (props) => {
         </p>
         <ul>
           <li>Telefono: 43242354</li>
-          <li>Email:</li>
-          <li>Facebook:</li>
-          <li>Twitter:</li>
-          <li>Skype:</li>
+          <li>Email: tecnonews@mail.com</li>
         </ul>
       </div>
     </main>

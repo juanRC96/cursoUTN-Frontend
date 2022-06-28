@@ -35,6 +35,20 @@ const NosotrosPage = (props) => {
           suscipit, nisl nec tempor ultricies, justo sapien imperdiet metus,
           ac tincidunt quam enim non sem.
         </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec iaculis
+          interdum tincidunt. Etiam sagittis lacinia sodales. Suspendisse
+          aliquet metus eu sollicitudin aliquet. Sed erat ex, hendrerit sit amet
+          odio sed, laoreet interdum nibh. Praesent suscipit, nisl nec tempor
+          ultricies, justo sapien imperdiet metus, ac tincidunt quam enim non
+          sem.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+          iaculis interdum tincidunt. Etiam sagittis lacinia sodales.
+          Suspendisse aliquet metus eu sollicitudin aliquet. Sed erat ex,
+          hendrerit sit amet odio sed, laoreet interdum nibh. Praesent
+          suscipit, nisl nec tempor ultricies, justo sapien imperdiet metus,
+          ac tincidunt quam enim non sem.
+        </p>
       </div>
       <div className="staff">
             <h2>Quienes somos</h2>
