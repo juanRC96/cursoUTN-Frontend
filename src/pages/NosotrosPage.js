@@ -83,7 +83,7 @@ const NosotrosPage = (props) => {
                     <img
                       src="images/nosotros/vanesahernandez.jpg"
                       alt="Vanesa Hernandez"
-                      style={{ borderRadius: "50%" }}
+                      style={{ borderRadius: "50%"}}
                     />
                     <h6>Periodista</h6>
                     <p>
@@ -94,6 +94,9 @@ const NosotrosPage = (props) => {
                       interdum nibh. Praesent suscipit, nisl nec tempor
                       ultricies, justo sapien imperdiet metus, ac tincidunt quam
                       enim non sem.
+
+                      
+
                     </p>
                   </div>
                 </Accordion.Body>
