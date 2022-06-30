@@ -1,32 +1,33 @@
 import React from "react";
 import "./../styles/components/pages/ContactoPage.css"
+import {Form} from "react-bootstrap";
 
 const ContactoPage = (props) => {
   return (
     <main className="holder contacto">
       <div>
         <h2>Contacto Rápido</h2>
-        <form action="" method="" className="formulario">
+        <Form action="" method="" className="formulario">
           <p>
-            <label for="nombre">Nombre</label>
+            <label htmlFor="nombre">Nombre</label>
             <input type="text" name=""></input>
           </p>
           <p>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <input type="text" name=""></input>
           </p>
           <p>
-            <label for="telefono">Telefono</label>
+            <label htmlFor="telefono">Telefono</label>
             <input type="text" name=""></input>
           </p>
           <p>
-            <label for="mensaje">Mensaje</label>
+            <label htmlFor="mensaje">Mensaje</label>
             <textarea name=""></textarea>
           </p>
           <p className="acciones">
             <input type="submit" value="Enviar" />
           </p>
-        </form>
+        </Form>
       </div>
       <div className="datos">
         <h2>Otras vias de comunicacion</h2>

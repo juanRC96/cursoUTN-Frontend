@@ -25,8 +25,8 @@ function Navigation() {
             Contacto
           </Nav.Link>
 
-          <NavDropdown className="navdropdown" title="Dropdown" id="basic-nav-dropdown" style={{fontSize:"25px",marginLeft:"2rem"}}>
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown className="navdropdown" title="Administrar" id="basic-nav-dropdown" style={{fontSize:"25px",marginLeft:"2rem"}}>
+            <NavDropdown.Item href="#action/3.1">Iniciar sesión</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">
               Another action
             </NavDropdown.Item>
