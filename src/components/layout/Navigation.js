@@ -26,15 +26,7 @@ function Navigation() {
           </Nav.Link>
 
           <NavDropdown className="navdropdown" title="Administrar" id="basic-nav-dropdown" style={{fontSize:"25px",marginLeft:"2rem"}}>
-            <NavDropdown.Item href="#action/3.1">Iniciar sesión</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/login">Iniciar sesión</NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Navbar.Collapse>
