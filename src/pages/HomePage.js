@@ -1,56 +1,41 @@
 import Carousel from "react-bootstrap/Carousel";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./../styles/components/pages/HomePage.css";
+import axios from "axios";
 
 const HomePage = (props) => {
+
+  const[noticias,setNoticias] = useState([])
+
+  useEffect(()=>{
+    const cargarNoticias = async() =>{
+      const response = await axios.get('http://localhost:3000/api/noticias');
+      setNoticias(response.data)
+    }
+    cargarNoticias();
+  },[])
+
+
   return (
     <main className="holder">
       <Carousel className="carousel">
-        <Carousel.Item className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="images/home/gaming.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>
-              ¡El futuro es hoy! Sony presentaría una nueva marca de gaming
-            </h3>
-            <p>
-              Sony presentará la marca INZONE, especializada en headsets y
-              monitores para gaming
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="images/home/nvidia.jpg"
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h3>
-              Las fechas de lanzamiento de las RTX 4000 se retrasa nuevamente
-            </h3>
-            <p>Se espera que sean lanzadas en octubre de 2022</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        <Carousel.Item className="carousel-item">
-          <img
-            className="d-block w-100"
-            src="images/home/explorer.jpg"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h3>
-              Internet Explorer: mañana deja de funcionar el clásico navegador
-              de Microsoft
-            </h3>
-            <p>La compañía se enfoca exclusivamente en el browser Edge.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
+        {noticias.map(noticia =>
+                <Carousel.Item className="carousel-item">
+                <img
+                  className="d-block w-100"
+                  src={noticia.imagen}
+                  alt="First slide"
+                />
+                <Carousel.Caption>
+                  <h3>
+                    {noticia.titulo}
+                  </h3>
+                  <p>
+                    {noticia.subtitulo}
+                  </p>
+                </Carousel.Caption>
+              </Carousel.Item>
+          )}
       </Carousel>
       <div className="columnas">
         <div className="bienvenidos">
