@@ -1,32 +1,34 @@
 import React, { useState } from "react";
 import "./../styles/components/pages/ContactoPage.css"
-import {Form} from "react-bootstrap";
-import Alerts from "../components/Alerts";
+import {Alert, Form} from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const ContactoPage = (props) => {
 
-  const [alert,setAlert] = useState({variant:"",text:""});
+  const [variante,setVariante] = useState("");
+  const [texto,setTexto] = useState("");
   const [form,setForm] = useState({nombre:"",email:"",telefono:"",mensaje:""});
   const navigate = useNavigate();
-  const [sending,setSending] = useState(false);
 
   const handleSubmit= async(event) =>{
     event.preventDefault();
     try {
       let res = await axios.post('http://localhost:3000/api/mensajes/agregar',form)
       if(res.status===200){
-        setAlert({variant:"primary",text:"Enviando..."})
+        setVariante("primary")
+        setTexto("Enviando...")
         await axios.post('http://localhost:3000/api/contacto',form)
-        setAlert({variant:"success",text:"Mensaje enviado con exito"})
+        setVariante("success")
+        setTexto("Mensaje enviado con exito")
         setTimeout(()=>{
           navigate("/")
       },1200)
       }
     } catch (error) {
       console.log(error);
-      setAlert({variant:"danger",text:"Error"})
+      setVariante("danger")
+      setTexto("Hubo un error")
     }
   }
 
@@ -62,7 +64,9 @@ const ContactoPage = (props) => {
           <p className="acciones">
             <input type="submit" value="Enviar" />
           </p>
-          <Alerts variant={alert.variant} text={alert.text}/>
+          <Alert key={variante} variant={variante}>
+          {texto}
+        </Alert>
         </Form>
       </div>
       <div className="datos">

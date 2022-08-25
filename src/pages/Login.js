@@ -52,9 +52,7 @@ export default function Login(){
           Submit
         </Button>
 
-        <Alert key={variante} variant={variante}>
-          {texto}
-        </Alert>
+        <Alert variant={variante}>{texto}</Alert>
 
       </Form>
       </div>

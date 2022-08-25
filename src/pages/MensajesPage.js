@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Button } from "react-bootstrap"
+import "./../styles/components/pages/MensajesPage.css"
 
 export default function MensajesPage(){
 
@@ -21,7 +22,7 @@ export default function MensajesPage(){
     return(
         <div>
         {mensajes.map((mensaje)=>
-        <div style={{backgroundColor:"white",margin:"2rem",padding:"1rem",borderRadius:"10px"}} key={mensaje.id}>
+        <div className="mensajes" key={mensaje.id}>
             <h3>De: {mensaje.nombre}</h3>
             <h5>e-mail: {mensaje.email}</h5>
             <h5>Telefono: {mensaje.telefono}</h5>

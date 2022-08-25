@@ -87,8 +87,8 @@ const uploadImage = async() => {
         {
           uploading &&
           <Alert key="primary" variant="primary">
-          Subiendo imagen...
-        </Alert>
+            Subiendo imagen...
+          </Alert>
         }
 
         <Button variant="primary" type="submit" onClick={handleSubmit}>Guardar</Button>
