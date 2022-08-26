@@ -9,7 +9,7 @@ const HomePage = (props) => {
 
   useEffect(()=>{
     const cargarNoticias = async() =>{
-      const response = await axios.get('http://localhost:3000/api/noticias');
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/noticias`);
       setNoticias(response.data)
     }
     cargarNoticias();

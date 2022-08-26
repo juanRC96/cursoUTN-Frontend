@@ -18,7 +18,7 @@ export default function ModificarNoticia(){
 
     useEffect(()=>{
         const request = async() =>{
-            let res = await axios.get('http://localhost:3000/api/noticias/'+id)
+            let res = await axios.get(`${process.env.REACT_APP_API_URL}/api/noticias/`+id)
             setNoticia(res.data)
             setValue("titulo", res.data.titulo);
             setValue("subtitulo", res.data.subtitulo);
@@ -30,7 +30,7 @@ export default function ModificarNoticia(){
 
     const onSubmit = async(data) => {
         try {
-          let res = await axios.post('http://localhost:3000/api/noticias/modificar/'+id,data)
+          let res = await axios.post(`${process.env.REACT_APP_API_URL}/api/noticias/modificar/`+id,data)
           if(res.status===200){
             setVariante("success")
             setTexto("Noticia actualizada")
@@ -58,7 +58,7 @@ export default function ModificarNoticia(){
         setUploading(true)
         try{
         if(noticia.img_id){
-            await axios.get('http://localhost:3000/api/noticias/eliminarimagen/'+noticia.img_id);
+            await axios.get(`${process.env.REACT_APP_API_URL}/api/noticias/eliminarimagen/`+noticia.img_id);
         }
         const data = new FormData();
         data.append("file",imageSelected)

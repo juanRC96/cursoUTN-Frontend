@@ -10,13 +10,13 @@ export default function MensajesPage(){
 
     useEffect(()=>{
         const request = async() =>{
-            await axios.get("http://localhost:3000/api/mensajes").then((response)=>setMensajes(response.data))
+            await axios.get(`${process.env.REACT_APP_API_URL}/api/mensajes`).then((response)=>setMensajes(response.data))
         }
         request()
     },[refresh])
 
     const handleDelete = async(id) =>{
-        axios.post('http://localhost:3000/api/mensajes/eliminar/'+id).then(()=>setRefresh((old) => old + 1)) 
+        axios.post(`${process.env.REACT_APP_API_URL}/api/mensajes/eliminar/`+id).then(()=>setRefresh((old) => old + 1)) 
     }
 
     return(

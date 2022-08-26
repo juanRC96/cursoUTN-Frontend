@@ -16,7 +16,7 @@ export default function AgregarNoticia(){
   const handleSubmit = async(event) => {
     event.preventDefault();
     try {
-      let res = await axios.post('http://localhost:3000/api/noticias/agregar',form)
+      let res = await axios.post(`${process.env.REACT_APP_API_URL}/api/noticias/agregar`,form)
       if(res.status===200){
         setVariante("success")
         setTexto("Noticia agregada")

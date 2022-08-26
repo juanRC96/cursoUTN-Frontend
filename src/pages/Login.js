@@ -13,7 +13,7 @@ export default function Login(){
     const handleSubmit = async(event) => {
         event.preventDefault();
         try {
-          let res = await axios.post('http://localhost:3000/api/usuarios',form)
+          let res = await axios.post(`${process.env.REACT_APP_API_URL}/api/usuarios`,form)
 
           if(res.data.usuario!==undefined){
             context.loginUser(res.data.usuario)
