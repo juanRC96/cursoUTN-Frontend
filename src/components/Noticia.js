@@ -11,7 +11,7 @@ const Noticia= (props) =>{
     
 
     const handleDelete = async() => {
-        axios.post('http://localhost:3000/api/noticias/eliminar/'+id).then(()=>setRefresh((old) => old + 1)) 
+        axios.post(`${process.env.REACT_APP_API_URL}/api/noticias/eliminar/`+id).then(()=>setRefresh((old) => old + 1)) 
     }
 
     return(

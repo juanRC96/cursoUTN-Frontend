@@ -52,7 +52,7 @@ const uploadImage = async() => {
   const data = new FormData();
   data.append("file",imageSelected)
   data.append("upload_preset","pw3d4dbo")
-  await axios.post("https://api.cloudinary.com/v1_1/dbh7diach/image/upload",data).then((response)=>{setForm({ ...form, img_id: response.data.public_id });})
+  await axios.post("https://api.cloudinary.com/v1_1/hhbvljc23/image/upload",data).then((response)=>{setForm({ ...form, img_id: response.data.public_id });})
   setUploading(false)
 }
 
