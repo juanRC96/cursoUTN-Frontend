@@ -14,11 +14,11 @@ const ContactoPage = (props) => {
   const handleSubmit= async(event) =>{
     event.preventDefault();
     try {
-      let res = await axios.post('http://localhost:3000/api/mensajes/agregar',form)
+      let res = await axios.post(`${process.env.REACT_APP_API_URL}/api/mensajes/agregar`,form)
       if(res.status===200){
         setVariante("primary")
         setTexto("Enviando...")
-        await axios.post('http://localhost:3000/api/contacto',form)
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/contacto`,form)
         setVariante("success")
         setTexto("Mensaje enviado con exito")
         setTimeout(()=>{
