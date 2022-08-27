@@ -38,7 +38,7 @@ function Navigation() {
             {
               context.userLogin &&
               <>
-              <Nav.Link className="navlink" as={Link} to="/mensajes">
+              <Nav.Link className="navlink" as={Link} to="/mensajes" style={{fontSize:"25px",marginLeft:"2rem"}}>
                 Mensajes
               </Nav.Link>
               
