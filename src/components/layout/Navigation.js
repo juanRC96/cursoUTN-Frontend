@@ -16,16 +16,16 @@ function Navigation() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
             
-            <Nav.Link className="navlink" as={Link} to="/">
+            <Nav.Link className="navlink" as={Link} to="/" style={{fontSize:"25px",marginLeft:"2rem"}}>
               Home
             </Nav.Link>
-            <Nav.Link className="navlink" as={Link} to="/nosotros">
+            <Nav.Link className="navlink" as={Link} to="/nosotros" style={{fontSize:"25px",marginLeft:"2rem"}}>
               Nosotros
             </Nav.Link>
-            <Nav.Link className="navlink" as={Link} to="/noticias">
+            <Nav.Link className="navlink" as={Link} to="/noticias" style={{fontSize:"25px",marginLeft:"2rem"}}>
               Noticias
             </Nav.Link>
-            <Nav.Link className="navlink" as={Link} to="/contacto">
+            <Nav.Link className="navlink" as={Link} to="/contacto" style={{fontSize:"25px",marginLeft:"2rem"}}>
               Contacto
             </Nav.Link>
 
