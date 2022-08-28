@@ -99,11 +99,11 @@ export default function ModificarNoticia(){
           }
           {
             uploading &&
-            <Alert key="primary" variant="primary">Subiendo imagen...</Alert>
+            <Alert key="primary" variant="primary" style={{marginTop:"1rem"}}>Subiendo imagen...</Alert>
           }
           {
             successUpload &&
-            <Alert key="success" variant="primary">Imagen subida</Alert>
+            <Alert key="success" variant="success" style={{marginTop:"1rem"}}>Imagen subida</Alert>
           }
         </Form.Group>
 
