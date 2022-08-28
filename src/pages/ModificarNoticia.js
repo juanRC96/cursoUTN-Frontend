@@ -65,6 +65,7 @@ export default function ModificarNoticia(){
         data.append("file",imageSelected)
         data.append("upload_preset","igey7tkr")
         await axios.post( "https://api.cloudinary.com/v1_1/hhbvljc23/image/upload",data).then((response)=>{setValue("img_id", response.data.public_id)})
+        setUploading(false)
         setSuccessUpload(true)
       }catch(error){
         console.log(error)
@@ -104,6 +105,10 @@ export default function ModificarNoticia(){
           {
             successUpload &&
             <Alert key="success" variant="success" style={{marginTop:"1rem"}}>Imagen subida</Alert>
+          }
+                    {
+            !successUpload &&
+            <Alert key="warning" variant="warning" style={{marginTop:"1rem"}}>No hay imagen subida</Alert>
           }
         </Form.Group>
 

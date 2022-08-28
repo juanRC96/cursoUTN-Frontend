@@ -11,6 +11,7 @@ export default function AgregarNoticia(){
   const [imageSelected,setImageSelected] = useState("");
   const [uploading,setUploading] = useState(false);
   const [allowUpload, setAllowUpload] = useState(false);
+  const [successUpload,setSuccessUpload] = useState(false);
   const navigate = useNavigate();
 
   const handleSubmit = async(event) => {
@@ -54,6 +55,7 @@ const uploadImage = async() => {
   data.append("upload_preset","igey7tkr")
   await axios.post("https://api.cloudinary.com/v1_1/hhbvljc23/image/upload",data).then((response)=>{setForm({ ...form, img_id: response.data.public_id });})
   setUploading(false)
+  setSuccessUpload(true)
 }
 
 
@@ -82,14 +84,19 @@ const uploadImage = async() => {
             allowUpload &&
             <Button variant="primary" onClick={uploadImage} style={{marginTop:"1rem"}}>Subir imagen</Button>
           }
+          {
+            uploading &&
+            <Alert key="primary" variant="primary" style={{marginTop:"1rem"}}>Subiendo imagen...</Alert>
+          }
+          {
+            successUpload &&
+            <Alert key="success" variant="success" style={{marginTop:"1rem"}}>Imagen subida</Alert>
+          }
+                    {
+            !successUpload &&
+            <Alert key="warning" variant="warning" style={{marginTop:"1rem"}}>No hay imagen subida</Alert>
+          }
         </Form.Group>
-
-        {
-          uploading &&
-          <Alert key="primary" variant="primary">
-            Subiendo imagen...
-          </Alert>
-        }
 
         <Button variant="primary" type="submit" onClick={handleSubmit}>Guardar</Button>
 
