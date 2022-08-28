@@ -106,8 +106,8 @@ export default function ModificarNoticia(){
             successUpload &&
             <Alert key="success" variant="success" style={{marginTop:"1rem"}}>Imagen subida</Alert>
           }
-                    {
-            !successUpload &&
+          {
+            !successUpload && !uploading &&
             <Alert key="warning" variant="warning" style={{marginTop:"1rem"}}>No hay imagen subida</Alert>
           }
         </Form.Group>
