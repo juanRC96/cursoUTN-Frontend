@@ -14,6 +14,7 @@ export default function ModificarNoticia(){
     const [texto,setTexto] = useState("");
     const {register,setValue,handleSubmit} = useForm();
     const [allowUpload, setAllowUpload] = useState(false);
+    const [successUpload,setSuccessUpload] = useState(false);
     const navigate = useNavigate();
 
     useEffect(()=>{
@@ -64,6 +65,7 @@ export default function ModificarNoticia(){
         data.append("file",imageSelected)
         data.append("upload_preset","igey7tkr")
         await axios.post( "https://api.cloudinary.com/v1_1/hhbvljc23/image/upload",data).then((response)=>{setValue("img_id", response.data.public_id)})
+        setSuccessUpload(true)
       }catch(error){
         console.log(error)
       }
@@ -95,6 +97,14 @@ export default function ModificarNoticia(){
             allowUpload &&
             <Button variant="primary" onClick={uploadImage} style={{marginTop:"1rem"}}>Subir imagen</Button>
           }
+          {
+            uploading &&
+            <Alert key="primary" variant="primary">Subiendo imagen...</Alert>
+          }
+          {
+            successUpload &&
+            <Alert key="success" variant="primary">Imagen subida</Alert>
+          }
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -104,13 +114,6 @@ export default function ModificarNoticia(){
         <Form.Group className="mb-3">
           <Form.Control type="hidden" name="img_id" {...register("img_id")}/>
         </Form.Group>
-
-        {
-          uploading &&
-          <Alert key="primary" variant="primary">
-          Subiendo imagen...
-        </Alert>
-        }
 
         <Button variant="primary" type="submit">
           Guardar
