@@ -54,7 +54,7 @@ function App() {
                     <Route path="noticias/modificar/:id" element={<ModificarNoticia/>}/>
                     <Route path="mensajes" element={<MensajesPage />} />
 
-                    <Route path="login" element={<ErrorSesion error={"sesioniciada"}/>} />
+                    <Route path="login" element={<ErrorSesion error={"sesioniniciada"}/>} />
                   </>
                 }
               </Routes>
