@@ -6,7 +6,7 @@ const Header = (props) => {
     return(
         <header>
             <div className="holder">
-                <img src="images/newspaper.png" width="100" alt="TecnoNews" as={Link} to="/"/>
+            <Link to="/"><img src="images/newspaper.png" width="100" alt="TecnoNews"/></Link>
                 <h1>TecnoNews</h1>
             </div>
         </header>
