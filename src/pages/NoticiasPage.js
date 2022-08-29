@@ -35,7 +35,7 @@ const NoticiasPage = (props) =>{
                         }
                         {
                             loading &&
-                            <Spinner animation="border" variant="primary" style={{width:"5rem",height:"5rem",position:"relative"}}/>
+                            <Spinner animation="border" variant="primary" style={{width:"5rem",height:"5rem",position:"relative",right:"5rem"}}/>
                         }
                         {
                             !loading &&
