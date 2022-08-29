@@ -1,8 +1,11 @@
 
-export default function ErrorSesion(){
+export default function ErrorSesion(props){
+
+    const {mensaje} = props;
+
     return(
         <div className="contenedor">
-            <h1>Inicie sesion para continuar</h1>
+            <h3>{mensaje}</h3>
         </div>
     )
 }

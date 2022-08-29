@@ -38,9 +38,9 @@ function App() {
                     <Route path="contacto" element={<ContactoPage />} />
                     <Route path="login" element={<Login />} />
 
-                    <Route path="alta" element={<ErrorSesion/>}/>
-                    <Route path="noticias/modificar/:id" element={<ErrorSesion/>}/>
-                    <Route path="mensajes" element={<ErrorSesion/>}/>
+                    <Route path="alta" element={<ErrorSesion message={"Inicie sesión para continuar"}/>}/>
+                    <Route path="noticias/modificar/:id" element={<ErrorSesion message={"Inicie sesión para continuar"}/>}/>
+                    <Route path="mensajes" element={<ErrorSesion message={"Inicie sesión para continuar"}/>}/>
                   </>
                 }
                 {
@@ -54,7 +54,7 @@ function App() {
                     <Route path="noticias/modificar/:id" element={<ModificarNoticia/>}/>
                     <Route path="mensajes" element={<MensajesPage />} />
 
-                    <Route path="login" element={<ErrorSesion />} />
+                    <Route path="login" element={<ErrorSesion message={"Ya hay una sesión iniciada"}/>} />
                   </>
                 }
               </Routes>
