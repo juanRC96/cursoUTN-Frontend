@@ -16,9 +16,9 @@ export default function Login(){
           let res = await axios.post(`${process.env.REACT_APP_API_URL}/api/usuarios`,form)
 
           if(res.data.usuario!==undefined){
-            context.loginUser(res.data.usuario)
             setVariante("success")
             setTexto("Iniciando sesion")
+            context.loginUser(res.data.usuario)
           }else{
             setVariante("danger")
             setTexto("Hubo un error al iniciar sesion")
