@@ -16,6 +16,7 @@ import AuthContext from "./context/AuthContext";
 import AgregarNoticia from "./pages/AgregarNoticia";
 import ModificarNoticia from "./pages/ModificarNoticia";
 import MensajesPage from "./pages/MensajesPage";
+import ErrorSesion from "./pages/ErrorSesion";
 
 function App() {
   return (
@@ -28,17 +29,32 @@ function App() {
           {
             context => (
               <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="nosotros" element={<NosotrosPage />} />
-                <Route path="noticias" element={<NoticiasPage />} />
-                <Route path="contacto" element={<ContactoPage />} />
-                <Route path="login" element={<Login />} />
+                {
+                  !context.userLogin &&
+                  <>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="nosotros" element={<NosotrosPage />} />
+                    <Route path="noticias" element={<NoticiasPage />} />
+                    <Route path="contacto" element={<ContactoPage />} />
+                    <Route path="login" element={<Login />} />
+
+                    <Route path="alta" element={<ErrorSesion/>}/>
+                    <Route path="noticias/modificar/:id" element={<ErrorSesion/>}/>
+                    <Route path="mensajes" element={<ErrorSesion/>}/>
+                  </>
+                }
                 {
                   context.userLogin &&
                   <>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="nosotros" element={<NosotrosPage />} />
+                    <Route path="noticias" element={<NoticiasPage />} />
+                    <Route path="contacto" element={<ContactoPage />} />
                     <Route path="alta" element={<AgregarNoticia/>}/>
                     <Route path="noticias/modificar/:id" element={<ModificarNoticia/>}/>
                     <Route path="mensajes" element={<MensajesPage />} />
+
+                    <Route path="login" element={<ErrorSesion />} />
                   </>
                 }
               </Routes>
